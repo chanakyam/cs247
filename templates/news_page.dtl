@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Business &amp; Personal | Finance News</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="/js/html5.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<!--<script src="/js/angular.min.js"></script>
+<script src="/js/controllers.js"></script>
+<script src="/js/slides.min.jquery.js"></script>
+<script src="/js/ui-bootstrap-tpls-0.6.0.js"></script>-->
+
+    <script src="/js/play_video.js"></script>
+    <script type="text/javascript" src="http://jwpsrv.com/library/5V3tOP97EeK2SxIxOUCPzg.js"></script>
+<script type="text/javascript">jwplayer.key="L0SAYMTJJs/IIkeci5tG4vgIMGHAc6YFBtmJaA==";</script></script>
+<script>
+function epochToDate(epochSecs) { 
+    var m_names = new Array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'); 
+    var d = new Date(new Date(0).setUTCSeconds(parseInt(epochSecs))); 
+    return (m_names[d.getMonth()]+ " " + d.getDate()+ " " + d.getFullYear()); 
+}
+</script>
+<style>
+      /* 
+  Resets defualt browser settings
+  reset.css
+*/
+
+.news-right {
+  float: none;
+  width: 100%;
+  line-height: 17px;
+  border-bottom: 1px dashed #666;
+}
+
+#frame {
+  position:absolute;
+  z-index:0;
+  width:739px;
+  height:341px;
+  top:-3px;
+  left:-80px;
+}
+.date_field{
+  margin-left: 10px;
+font-style: italic;
+font-size: 12px;
+font-weight: normal;
+}
+.module {
+  position: relative;
+  margin: 0 0 10px;
+  background: #f8f8f8;
+  border: 1px solid #cccccc;
+  padding: 10px;
+}
+.news_title {
+  font-size: 20px;
+  color: #000a11;
+  font-weight: bold;
+  padding: 6px 10px;
+  background: #ddd;
+}
+.news_body{
+  text-align: justify;
+  line-height: 19px;
+}
+.news_body p{
+  margin: 10px 0px;
+}
+
+</style>
+</head>
+<body>
+{% include "header.dtl" %}
+{% include "navigation.dtl" %}
+<div class="container">
+<div class="ad1 margin20_T"></div>
+  <!-- ad1 end  -->
+
+  <!-- bannerslides end -->
+  <section class="contentarea margin20_T">
+    <aside class="leftcontent">
+      <div class="module">
+        <div class="slideshow">           
+            <div class="video" >
+              <input type="hidden" name="video_val" id="video_val" value="{{videoParam.video}}">
+                <div id="myElement">Loading the player...</div>
+            </div>
+            <span class="clearboth"></span>
+            <div class="slideshow-content">       
+              <p>{{ videoParam.description }} - {{ videoParam.upload_date }}</p> 
+            </div>
+        </div>
+          <!--Slideshow VIDEOS End-->
+        <div class="news_title">{{ news.title }}
+          <span class="date_field">-<script>document.write(epochToDate({{ news.uploaded_date }}))</script>
+           </span></div>
+        <div class="news_body" style="line-height:19px;">
+          {% if news.thumb_image %}
+              <img src="http://img1.contentapi.ws/{{ news.thumb_image|first }}" style="width: 260px;border: 1px solid #999;float: left;margin: 5px 10px;" alt="">      
+          {% endif %}
+          {{ news.news_body }}
+        </div>
+      </div>
+      <!-- {% if news.channel == 'us_business' %}
+        <h2 style="line-height: 35px;width: 98%;background: #ccc;margin-bottom: -1px;padding-left: 5px;">MORE BUSINESS NEWS</h2>
+      {% elif news.channel == 'us_stocks' %}
+        <h2 style="line-height: 35px;width: 98%;background: #ccc;margin-bottom: -1px;padding-left: 5px;">MORE HOT STOCKS NEWS</h2>
+      {% elif news.channel == 'us_economy' %}
+        <h2 style="line-height: 35px;width: 98%;background: #ccc;margin-bottom: -1px;padding-left: 5px;">MORE ECONOMY NEWS</h2>
+      {% elif news.channel == 'us_money' %}
+        <h2 style="line-height: 35px;width: 98%;background: #ccc;margin-bottom: -1px;padding-left: 5px;">MORE MONEY NEWS</h2>
+      {% endif %} -->
+
+
+        <h2 style="line-height: 35px;width: 98%;background: #ccc;margin-bottom: -1px;padding-left: 5px;">MORE BUSINESS NEWS</h2>
+        <div class="news row">
+          <div class="NewsLeft" style="background: #f8f8f8;border: 1px solid #cccccc;padding: 10px;width: 95%;">
+            {% for n in topUsBusinessNews %}
+              <div class="news-row">
+                <div class="news-right">
+                   <!-- <a href="/n/{{ n.id }}">
+                    <img style="float: left;margin: 6px 5px;;height: 105px;width: 150px;" src="http://img1.contentapi.ws/{{ n.thumb_image }}"/>
+                   </a> -->
+                  <h3 style="line-height: 25px;"><a href="/n/{{ n.id }}">{{ n.title }}</a></h3>
+                    <br>
+                    <span>{{ n.description }}</span>
+                    <span class="small" style="margin-left:85%">-{{ n.upload_date }}</span>
+                </div>
+              </div>
+            {% endfor %}
+            <span class="clearboth"></span>
+              <span class="clearboth"></span>
+              <!-- <div class="row" style="margin-left: -5px;border-top: 1px dashed #ccc;">
+                <pagination style="text-align: center;" ng-controller="Cs247Pagination" on-select-page="pageChanged(page)" items-per-page="newsPerPage" total-items="bigTotalItems" page="bigCurrentPage" max-size="maxSize" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+              </div> -->
+        </div>
+      </div>
+    </aside>
+    {% include "side_bar.dtl" %}
+    <span class="clear"></span>
+    <div class="ad1 margin20_T"> <script  src="http://tag.contextweb.com/TagPublish/getjs.aspx?action=VIEWAD&cwrun=200&cwadformat=728X90&cwpid=552062&cwwidth=728&cwheight=90&cwpnet=1&cwtagid=178292"></script></div>
+  </section>
+  <!-- contentarea end --> 
+</div>
+<!-- container end -->
+{% include "footer.dtl" %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46294983-4', 'cs247.net');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

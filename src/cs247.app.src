@@ -1,0 +1,12 @@
+{application, cs247,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { cs247_app, []}},
+  {env, []}
+ ]}.

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html ng-app="cs247App">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Business &amp; Personal | Finance News</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="js/html5.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/controllers.js"></script>
+    <script src="/js/slides.min.jquery.js"></script>
+    <script src="/js/ui-bootstrap-tpls-0.6.0.js"></script>
+
+
+
+<style>
+      /* 
+  Resets defualt browser settings
+  reset.css
+*/
+
+
+
+#frame {
+  position:absolute;
+  z-index:0;
+  width:739px;
+  height:341px;
+  top:-3px;
+  left:-80px;
+}
+
+/*
+  Slideshow
+*/
+
+#slides {
+  top:15px;
+  left:4px;
+  z-index:100;
+}
+
+/*
+  Slides container
+  Important:
+  Set the width of your slides container
+  Set to display none, prevents content flash
+*/
+
+.slides_container {
+  width:670px;
+  overflow:hidden;
+  position:relative;
+  display:none;
+}
+
+/*
+  Each slide
+  Important:
+  Set the width of your slides
+  If height not specified height will be set by the slide content
+  Set to display block
+*/
+
+.slides_container div.slide {
+  width:570px;
+  height:370px;
+  display:block;
+}
+
+
+/*
+  Next/prev buttons
+*/
+
+#slides .next,#slides .prev {
+  position:absolute;
+  top:107px;
+  left:-39px;
+  width:24px;
+  height:43px;
+  display:block;
+  z-index:101;
+}
+
+#slides .next {
+  left:585px;
+}
+
+/*
+  Pagination
+*/
+
+.pagination {
+  margin:26px auto 0;
+  width:100px;
+}
+
+.pagination li {
+  float:left;
+  margin:0 1px;
+  list-style:none;
+}
+
+.pagination li a {
+  display:block;
+  width:12px;
+  height:0;
+  padding-top:12px;
+  background-image:url(../img/pagination.png);
+  background-position:0 0;
+  float:left;
+  overflow:hidden;
+}
+
+.pagination li.current a {
+  background-position:0 -12px;
+}
+
+/*
+  Caption
+*/
+
+.caption {
+  z-index:500;
+  position:absolute;
+  bottom:-35px;
+  left:0;
+  height:auto;
+  padding:5px 20px 0 20px;
+  background:#000;
+  background:rgba(0,0,0,.5);
+  width:670px;
+  font-size:1em;
+  line-height:1.33;
+  color:#fff;
+  border-top:1px solid #000;
+  text-shadow:none;
+}
+
+    </style>
+    
+    <script>
+    $(function(){
+      $('#slides').slides({
+        preload: true,
+        preloadImage: 'img/loading.gif',
+        play: 2000,
+        pause: 2500,
+        hoverPause: true,
+        pagination: {
+          active: true
+        },
+        animationStart: function(current){
+          $('.caption').animate({
+            bottom:-35
+          },100);
+        },
+        animationComplete: function(current){
+          $('.caption').animate({
+            bottom:0
+          },200);
+        },
+        slidesLoaded: function() {
+          $('.caption').animate({
+            bottom:0
+          },200);
+        }
+      });
+    });
+  </script>
+</head>
+
+<body ng-controller="Cs247Home" ng-cloak>
+{% include "header.dtl" %}
+{% include "navigation.dtl" %}
+<div class="container">
+  <div class="ad1 margin20_T"<img src="../images/ad1.jpg" width="727" height="90" alt=""></div>
+  <!-- ad1 end  -->
+  
+  <!--<div class="bannerslides margin20_T">
+    <div class="slide-show"><img src="/../images/slide-img.jpg" alt=""></div>
+    <div class="right-ad2"><img src="/../images/right-ad2.jpg" alt=""></div>
+    <span class="clear"></span> </div>-->
+
+  <!-- bannerslides end -->
+  <div class="MarketNews margin20_T">
+    <div class="MarketLeft">
+     
+   <aside class="slideleftcontent">
+      <div>
+      <div class="blue-title">Slideshow</div>
+      <div id="slides">
+        <div class="slides_container">
+          <div class="slide">
+            <img src="http://img1.contentapi.ws/{{ firstslide.view_image }}" width="670" height="570" alt="Slide 1"></a>
+            <div class="caption" style="bottom:0">
+              <p>{{ firstslide.title }}</p>
+            </div>
+          </div>
+          {% for img in params %}
+
+          <div class="slide">
+            <img src="http://img1.contentapi.ws/{{ img.value.view_image }}" width="670" height="570" alt="Slide 1"></a>
+            <div class="caption" style="bottom:0">
+              <p>{{ img.value.title }}</p>
+            </div>
+          </div>
+          {% endfor %}                   
+        </div>
+    </div>
+  </div>
+    </aside>
+
+      
+    </div>
+    <!-- MarketLeft end -->
+    <div class="right-ad3"><img src="/../images/right-ad3.jpg" alt=""></div>
+    <span class="clear"></span> </div>
+  <!-- MarketNews end -->
+  <section class="contentarea">
+   
+    {% include "side_bar.dtl" %}
+    <span class="clear"></span>
+    <div class="ad1 margin20_T"><img src="/../images/ad1.jpg" alt=""></div>
+  </section>
+  <!-- contentarea end --> 
+</div>
+<!-- container end -->
+{% include "footer.dtl" %}
+</body>
+</html>

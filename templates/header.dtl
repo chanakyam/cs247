@@ -1,0 +1,18 @@
+<header>
+  <div class="container"> 
+    <a href="#" title="cs247" class="logo left"><img src="../images/cs247_logo.png" alt=""></a>
+    <!--<div class="TopRight">
+      <form class="searchform">
+        <input type="text" name="search" class="search-box" />
+        <input type="submit" value="" name="" class="searchbutton">
+      </form> -->
+      <div class="TopRight">
+        <script  src="http://tag.contextweb.com/TagPublish/getjs.aspx?action=VIEWAD&cwrun=200&cwadformat=728X90&cwpid=552062&cwwidth=728&cwheight=90&cwpnet=1&cwtagid=178292"></script>
+      </div>
+    </div>
+    <!-- TopRight end --> 
+    <span class="clear"></span> 
+  </div>
+  <span class="clear"></span> 
+  <!-- container end --> 
+  <span class="clear"></span> </header>

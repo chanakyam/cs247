@@ -1,0 +1,46 @@
+<footer>
+  <!-- <div class="container">
+    <div class="column">
+      <h3>Business &amp; Personal</h3>
+      <ul>
+        <li><a href="#">Markets</a></li>
+        <li><a href="#">World</a></li>
+        <li><a href="#">Politics</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Opinion</a></li>
+        <li><a href="#">Money</a></li>
+        <li><a href="#">Pictures</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">Site Index Leg</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="#">Bankruptcy Law</a></li>
+        <li><a href="#">California Legal</a></li>
+        <li><a href="#">New York Legal</a></li>
+        <li><a href="#">Securities Law</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3>Support &amp; Contact</h3>
+      <ul>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Corrections</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <!--<h3>Follow Us On</h3>
+      <a href="#"><img src="../images/f-share.png" alt=""></a> <a href="#"><img src="../images/t-share.png" alt=""></a> <a href="#"><img src="../images/in-share.png" alt=""></a>
+      <div class="footerlogo margin20_T"><img src="../images/footer-logo.jpg" alt=""></div>
+    </div>
+    <span class="clear"></span> </div>
+  <!-- container -->
+  <div class="copyrights">
+  <span class="right">
+    <a href="https://twitter.com/cs247news"><img src="/images/twitter.png"></a>
+    <a href="https://www.facebook.com/cs247news"><img src="/images/facebook.png"></a>   
+  </span>
+  &copy; {% now "Y" %} cs247.net | Finance News. All Rights Reserved | <a href=/termsandconditions>Terms & Conditions</a></div>
+</footer>
