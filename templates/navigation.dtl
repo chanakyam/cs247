@@ -6,7 +6,7 @@
       <li> <a href="/" title="Now!">Now!</a> </li>
       <li><a href="/morenews?c=text_us_business&p=1" title="Business News" {% if news_category == 'text_us_business' %} class="active" {% endif %}>Business News</a></li>
       <li><a href="/morenews?c=text_us_economy&p=1" title="Economy News" {% if news_category == 'text_us_economy' %} class="active" {% endif %}>Economy News</a></li>
-      <li><a href="/morenews?c=text_us_stocks&p=1" title="Hot Stocks News" {% if news_category == 'text_us_stocks' %} class="active" {% endif %}>Hot Stocks News</a></li>
+      <!--<li><a href="/morenews?c=text_us_stocks&p=1" title="Hot Stocks News" {% if news_category == 'text_us_stocks' %} class="active" {% endif %}>Hot Stocks News</a></li>-->
       <li><a href="/morenews?c=text_us_money&p=1" title="Money News" {% if news_category == 'text_us_money' %} class="active" {% endif %}>Money News</a></li>
       <li><a href="/morevideos" title="More Videos" {% if news_category == 'videos' %} class="active" {% endif %}>More Videos</a></li>
     </ul>

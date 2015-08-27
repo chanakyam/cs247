@@ -69,10 +69,10 @@
           <div class="module padding10">      
             <div class="news">    
                {% for n in allnews %}
-                  <div class="row"> 
-                    <!-- <a href="/n/{{ n.id }}">
-                      <img style="float: left;margin-right: 10px;height: 105px;width: 150px;" src="http://img1.contentapi.ws/{{ n.thumb_image }}"/>
-                    </a> -->
+                  <div class="row devider"> 
+                    <a href="/n/{{ n.id }}">
+                      <img style="float: left;margin-right: 10px;height: 105px;width: 150px;" src="http://newscdn.lycos.com/{{ n.thumb_image }}"/>
+                    </a>
                     <a href="/n/{{ n.id }}">{{ n.title }}</a><br>
                     <span>{{ n.description }}</span>
                     <span class="small">{{ n.upload_date }}</span> 

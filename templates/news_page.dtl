@@ -100,7 +100,7 @@ font-weight: normal;
            </span></div>
         <div class="news_body" style="line-height:19px;">
           {% if news.thumb_image %}
-              <img src="http://img1.contentapi.ws/{{ news.thumb_image|first }}" style="width: 260px;border: 1px solid #999;float: left;margin: 5px 10px;" alt="">      
+              <img src="http://newscdn.lycos.com/{{ news.thumb_image|first }}" style="width: 260px;border: 1px solid #999;float: left;margin: 5px 10px;" alt="">      
           {% endif %}
           {{ news.news_body }}
         </div>
@@ -122,9 +122,9 @@ font-weight: normal;
             {% for n in topUsBusinessNews %}
               <div class="news-row">
                 <div class="news-right">
-                   <!-- <a href="/n/{{ n.id }}">
-                    <img style="float: left;margin: 6px 5px;;height: 105px;width: 150px;" src="http://img1.contentapi.ws/{{ n.thumb_image }}"/>
-                   </a> -->
+                   <a href="/n/{{ n.id }}">
+                    <img style="float: left;margin: 6px 5px;;height: 105px;width: 150px;" src="http://newscdn.lycos.com/{{ n.thumb_image }}"/>
+                   </a>
                   <h3 style="line-height: 25px;"><a href="/n/{{ n.id }}">{{ n.title }}</a></h3>
                     <br>
                     <span>{{ n.description }}</span>

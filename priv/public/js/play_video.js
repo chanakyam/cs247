@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var video = "http://video1.contentapi.ws/"+$('#video_val').val()
+    var video = "http://newscdn.lycos.com/world_news/"+$('#video_val').val()
 		var vastURI = 'http://vast.optimatic.com/vast/getVast.aspx?id=w984i078l984&zone=vpaidtag&pageURL=[INSERT_PAGE_URL]&pageTitle=[INSERT_PAGE_TITLE]&cb=[CACHE_BUSTER]';
     is_already_paused = false;
    jwplayer("myElement").setup({
